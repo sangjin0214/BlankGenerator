@@ -31,7 +31,6 @@ def process():
         for word in splitted_txt:
             if word == '':
                 q += 1
-    print('빈칸 개수 : ' + str(q))
     n = 0
     m = 0
     for splitted_txt in splitted_text:
@@ -47,5 +46,4 @@ def process():
         for word in splitted_txt:
             if word == '':
                 q += 1
-    print('빈칸 개수 : ' + str(q))
     return splitted_text, answer

@@ -4,6 +4,11 @@ import blankGenerator
 application = Flask(__name__)
 
 
+@application.route("/wakemydyno.txt")
+def wakemydyno():
+    return ""
+
+
 @application.route("/")
 def test():
     test, answer = blankGenerator.process()
