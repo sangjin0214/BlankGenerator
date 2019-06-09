@@ -1,8 +1,7 @@
 from flask import Flask, request
 import sys
 import blankGenerator
-application = Flask(__name__)
-app = Flask(__name__, static_folder='static', static_url_path='')
+application = Flask(__name__, static_folder='static', static_url_path='')
 
 
 @application.route("/")
