@@ -1,13 +1,13 @@
 from random import randint
 
 
-def process():
+def process(title):
     n = 0
     temp = ""
     text = []
     exp = ['!', '@', '#', '$', '.', ',', '-', '&', '(', ')', '*', '?', ';', ':', '"', "'"]
     answer = []
-    f = open("./questions/B.txt", "r")
+    f = open("./questions/" + title, "r")
     for line in f.readlines():
         for e in exp:
             line = line.replace(e, ' ' + e + ' ') if e in line else line

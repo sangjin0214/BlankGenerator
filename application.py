@@ -4,9 +4,20 @@ import blankGenerator
 application = Flask(__name__, static_folder='static', static_url_path='')
 
 
-@application.route("/")
+@application.route("/textselect")
+def select():
+    form = ''
+    form += '<p>지문 파일 제목을 입력해주세요 ex) jimun.txt</p><br>'
+    form += '<form action="/" method="post">'
+    form += '<input type="text" name="title">'
+    form += '<input type="submit" value="제출">'
+    form += '</form>'
+    return form
+
+@application.route("/", methods=['POST'])
 def test():
-    test, answer = blankGenerator.process()
+    title = request.form['title']
+    test, answer = blankGenerator.process(title)
     exp = ['!', '@', '#', '$', '.', ',', '-', '&', '(', ')', '*', '?', ';', ':', '"', "'"]
     test_form = ''
     test_form += '<p>문제</p><br>'
